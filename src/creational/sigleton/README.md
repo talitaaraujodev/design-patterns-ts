@@ -48,6 +48,7 @@ O que é bom ou ruim nos Singletons:
 
 **Ruim:**
 
-- É mais difícil de testar;
+- É mais difícil de testar, pois este impede que sejam criados instancias separadas para cada caso de teste, com o seu uso é de certa forma compartilhado o estado do objeto é único isso impossibilita certos cenários de teste;
 - Viola o princípio da responsabilidade única;
 - Requer tratamento especial em casos de concorrência;
+- Não é possível inibir o acesso a sua classe. Qualquer parte do código por chamar o método instance(), pois ele é estático, e ter acesso aos dados da classe.
