@@ -2,7 +2,7 @@
 
 ## Intenção
 
-_Definir uma interface para criar um objeto, mas deixar as subclasses decidirem que classe instanciar. O Factory Method permite adiar a instanciação para as subclasses._
+_Definir uma interface para criar um objeto, mas deixar as subclasses decidirem que classe instanciar. O Factory Method permite adiar a instanciação para as subclasses.Devemos usar quando precisamos criar um objeto sem expor a lógica de criação ao cliente e fazer referência a objetos recém-criados usando uma interface comum. Portanto, temos uma superclasse com várias subclasses e, com base na entrada, precisamos retornar uma das subclasses._
 
 ---
 
@@ -23,15 +23,6 @@ _Definir uma interface para criar um objeto, mas deixar as subclasses decidirem 
 - Use o factory method para desacoplar o código que cria do código que usa as classes (Single Responsibility Principle)
 - Use o factory method para dar um hook (gancho) às subclasses para permitir que elas decidam a lógica de criação de objetos
 - Use o factory method para eliminar duplicação de código na criação de objetos
-
-## Implementação - Teoria
-
-Observação importante: todos os objetos criados por um factory method tendem a ser chamados de "Product" (produto)
-
-1. Crie uma interface em comum para todos os produtos (por exemplo, Product)
-2. Crie classes que implementam a interface dos produtos (por exemplo, ConcreteProduct1, ConcreteProduct2...)
-3. Crie uma classe (Creator) que implementa ou contem o método fábrica (factory method). Essa classe pode conter dados e outros métodos. São raros os casos onde a classe Creator é simplesmente uma interface com o factory method. O método fábrica é responsável por criar produtos que implementam a interface "Product".
-4. Crie classes concretas que estendem a classe Creator e implementam o método fábrica. As classes ConcreteCreator podem retornar produtos diferentes, contando que esses produtos implementem a interface Product.
 
 ## Consequências
 
